@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Assignment7.Models.Donation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Recent Donations</h2>
+
+<p>Here are some recent donations to our grant program. Add yours to our list today!</p>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DonationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonationAmount)
+        </th>
+    </tr>
+
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonationAmount)
+        </td>
+    </tr>
+}
+
+</table>
